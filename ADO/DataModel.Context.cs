@@ -32,7 +32,16 @@ namespace ADO
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetNames_Result>("GetNames");
         }
+    
+        public virtual ObjectResult<GetDetails_Result> GetDetails(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetDetails_Result>("GetDetails", iDParameter);
+        }
 
-        public System.Data.Entity.DbSet<ADO.GetNames_Result> GetNames_Result { get; set; }
+        public System.Data.Entity.DbSet<GetDetails_Result> GetDetails_Result { get; set; }
     }
 }

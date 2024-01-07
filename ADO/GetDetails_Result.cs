@@ -10,10 +10,18 @@
 namespace ADO
 {
     using System;
-    
-    public partial class GetNames_Result
+    using System.ComponentModel.DataAnnotations;
+
+    public class GetDetails_Result
     {
+        [Key]
         public int BusinessEntityID { get; set; }
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string PersonType { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string City { get; set; }
+        public string Name { get; set; }
     }
 }

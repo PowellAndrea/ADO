@@ -16,8 +16,12 @@ namespace ADO
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "Home", action = "GetNames", id = UrlParameter.Optional });
+
+            routes.MapRoute(
+                name: "GetDetails",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "GetDetails", id = UrlParameter.Optional });
         }
     }
 }

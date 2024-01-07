@@ -9,7 +9,7 @@
    { 
       <div class="row">
          <div class="col">@Html.DisplayFor(modelItem => item.FullName)</div>
-         <div class="col">@Html.ActionLink("Details", "Details", new { id = item.BusinessEntityID })</div>
+         <div class="col">@Html.ActionLink("Details", "GetDetails", new { id = item.BusinessEntityID })</div>
       </div>
    }
 </div>
