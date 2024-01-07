@@ -32,5 +32,7 @@ namespace ADO
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetNames_Result>("GetNames");
         }
+
+        public System.Data.Entity.DbSet<ADO.GetNames_Result> GetNames_Result { get; set; }
     }
 }

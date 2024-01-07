@@ -10,10 +10,13 @@
 namespace ADO
 {
     using System;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class GetNames_Result
     {
+        [Key]
         public int BusinessEntityID { get; set; }
+
         public string FullName { get; set; }
     }
 }
