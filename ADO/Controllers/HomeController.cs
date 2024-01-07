@@ -19,9 +19,7 @@ namespace ADO.Controllers
 
         public ActionResult GetNames()
         {
-
             List<GetNames_Result> nameList = new List<GetNames_Result>();
-
 
             foreach (var item in db.GetNames())
             {
@@ -30,21 +28,5 @@ namespace ADO.Controllers
 
             return View(nameList);
         }
-
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            GetNames_Result getNames_Result = db.GetNames_Result.Find(id);
-            if (getNames_Result == null)
-            {
-                return HttpNotFound();
-            }
-            return View(getNames_Result);
-        }
-
-
     }
 }
